@@ -1,0 +1,273 @@
+
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Main App Container */
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Task Form */
+.task-form {
+  margin-bottom: 30px;
+}
+
+#inp {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#inp input {
+  flex: 1;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+}
+
+#inp input:focus {
+  border-color: #4f46e5;
+}
+
+#inp button {
+  padding: 13px 22px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#inp button:hover {
+  background: #3730a3;
+}
+
+#btns {
+  display: flex;
+  gap: 12px;
+}
+
+#btns select {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  background: #f8faff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #e5e7eb;
+}
+
+.progress-tracker h2 {
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.progress-tracker p {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.progress > div {
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.task-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.task-list li > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.task-list li span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.task-list small {
+  color: #777;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.task-list li span:last-child {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Task Buttons */
+.task-list li > div:last-child {
+  display: flex;
+  gap: 8px;
+}
+
+.task-list button {
+  padding: 9px 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.task-list button:first-child {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.task-list button:first-child:hover {
+  background: #bbf7d0;
+}
+
+.task-list button:last-child {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.task-list button:last-child:hover {
+  background: #fecaca;
+}
+
+/* Completed Task */
+.task-list li:has(button:first-child:where(:not(:hover))) {
+  transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .app {
+    margin: 15px;
+    padding: 18px;
+  }
+
+  #inp {
+    flex-direction: column;
+  }
+
+  #inp button {
+    width: 100%;
+  }
+
+  #btns {
+    flex-direction: column;
+  }
+
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-list li > div:last-child {
+    width: 100%;
+  }
+
+  .task-list button {
+    flex: 1;
+  }
+}
+
+
+/* Task Header */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.task-header h2 {
+  color: #222;
+}
+
+/* Delete All Button */
+.delete-all-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.delete-all-btn:hover {
+  background: #991b1b;
+}
+
+.delete-all-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
